@@ -11,10 +11,9 @@ def mpsearch(_query, _reslimit):
     return(videosSearch.result()["result"])
 
 def mpdownload(url):
-    with yt_dlp.YoutubeDL({'extract_audio': True, 'format': 'bestaudio', 'outtmpl': 'dl_temp/%(title)s.mp3'}) as video:
-        info_dict = video.extract_info(url, download = True)
-        video_title = info_dict['title']
-        print(video_title)
-        video.download(url)    
+    with yt_dlp.YoutubeDL({'extract_audio': True, 'format': 'bestaudio'}) as video:
+        info_dict = video.extract_info(url, download = False)
+        song_title = info_dict['title']
+        song_url = info_dict['url'] 
     print("Successfully Downloaded ")
-    return(video_title)
+    return(song_title, song_url)
