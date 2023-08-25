@@ -30,4 +30,4 @@ def mpthree():
             elif(argument == 'download'):
                 file = mpdownload(request.args.get('download'))
                 directory = os.curdir
-                return (jsonify({"url":file[1]}))
+                return (jsonify({"url":file[1], "title":file[0]+".mp3"}))
