@@ -1,9 +1,10 @@
 import os
 from flask import Flask, request, jsonify, Response
+from flask_cors import CORS
 from mpthree import mpsearch, mpdownload
 
 app = Flask(__name__)
-
+CORS(app)
 
 def search(query):
     results = mpsearch(query)
