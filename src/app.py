@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, send_from_directory, jsonify
+from flask import Flask, request, jsonify, Response
 from mpthree import mpsearch, mpdownload
 
 app = Flask(__name__)
@@ -30,4 +30,4 @@ def mpthree():
             elif(argument == 'download'):
                 file = mpdownload(request.args.get('download'))
                 directory = os.curdir
-                return (send_from_directory(directory, path=file+".mp3", as_attachment=True))
+                return (file[1])
