@@ -1,5 +1,6 @@
 from youtubesearchpython import VideosSearch
 import yt_dlp
+import os
 
 def mpsearch(_query, _reslimit):
     limit = 10
@@ -14,6 +15,11 @@ def mpdownload(url):
     with yt_dlp.YoutubeDL({'extract_audio': True, 'format': 'bestaudio'}) as video:
         info_dict = video.extract_info(url, download = False)
         song_title = info_dict['title']
-        song_url = info_dict['url'] 
+        song_url = info_dict['url']
+        f = open("demofile3.txt", "w")
+        path = os.getcwd() + "/" + f.name
+        f.write("Woops! I have deleted the content!")
+        f.close()
+
     print("Successfully Downloaded ")
-    return(song_title, song_url)
+    return(song_title, song_url, path)
