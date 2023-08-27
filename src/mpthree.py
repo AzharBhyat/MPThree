@@ -18,6 +18,7 @@ def mpdownload(url):
         song_url = info_dict['url']
         f = open("demofile3.txt", "w")
         path = os.getcwd() + "/" + f.name
+        print("path")
         f.write("Woops! I have deleted the content!")
         f.close()
 
