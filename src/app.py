@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify, Response, send_from_directory
+from flask import Flask, request, jsonify, Response, send_from_directory, redirect
 from flask_cors import CORS
 from mpthree import mpsearch, mpdownload
 
@@ -30,4 +30,5 @@ def mpthree():
 
             elif(argument == 'download'):
                 file = mpdownload(request.args.get('download'))
-                return (jsonify({"url":file[1], "title":file[0]+".mp3"}))
+                return (redirect(file[1], code=302))
+                ##return (jsonify({"url":file[1], "title":file[0]+".mp3"}))
