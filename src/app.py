@@ -29,6 +29,7 @@ def mpthree():
                 return (jsonify(mpsearch(query, int(reslimit))))
 
             elif(argument == 'download'):
-                file = mpdownload(request.args.get('download'))
-                return (redirect(file[1], code=302))
-                ##return (jsonify({"url":file[1], "title":file[0]+".mp3"}))
+                dl = mpdownload(request.args.get('download'))
+                file = dl[0]
+                file = BytesIO(file)
+                return (send_file(file, download_name=dl[1]+'.mp3', as_attachment=True))
