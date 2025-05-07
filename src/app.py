@@ -19,7 +19,7 @@ def search(query):
 def mpthree():
     if request.method == 'POST':
     #check user details from db
-        return("fokof")
+        return("Oops thats a no no..")
     elif request.method == 'GET':
         for argument in request.args:
             if argument == 'search':
