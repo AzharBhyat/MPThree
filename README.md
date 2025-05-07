@@ -9,6 +9,41 @@ A lightweight Python Flask API that **scrapes YouTube videos and returns MP3 aud
 > This project is not intended for public use or violation of YouTube's Terms of Service.
 
 ---
+## ▶️ Running Locally
+
+1. **Clone the repo**:
+
+```bash
+git clone https://github.com/AzharBhyat/MPThree.git
+cd MPThree
+```
+
+2. **Create a virtual environment (optional but recommended)**:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+```
+
+3. **Install dependencies**:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. **Run the Flask app**:
+
+```bash
+cd src
+python app.py
+```
+
+This starts the server at:
+
+```
+http://127.0.0.1:5000/mpthree
+```
+---
 
 ## 📖 Usage
 
